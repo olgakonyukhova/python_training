@@ -3,8 +3,8 @@ from fixture.application import Application
 from fixture.CatalogPage import CatalogPage
 
 
-@pytest.fixture()
-def app(request):
+@pytest.fixture(scope="function")
+def app():
     fixture = Application()
     fixture.open_site()
     yield fixture
@@ -27,4 +27,4 @@ class TestCatalog:
 
     def assert_tile_count_is_72(self, product_tiles):
         # Проверка, что плиток ровно 72
-        assert len(product_tiles) == 72, f"Ожидалось 72 товара, но найдено {len(product_tiles)}"
+        assert len(product_tiles) == 72, f"Ожидалось 72 товара, но найдено {len(product_tiles)} плиток"
