@@ -19,7 +19,6 @@ class TestCatalog:
         catalog_page.open_catalog()
         catalog_page.open_all_categories()
         catalog_page.wait_for_product_tiles()
-
         product_tiles = catalog_page.count_and_log_product_tiles()
 
         # Проверка количества плиток
