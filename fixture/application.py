@@ -6,7 +6,6 @@ class Application:
         from selenium import webdriver
         self.driver = webdriver.Chrome()
         self.driver.set_window_size(1512, 859)
-
         self.driver_helper = DriverHelper(self.driver)
 
     def destroy(self):
